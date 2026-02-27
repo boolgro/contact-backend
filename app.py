@@ -12,7 +12,7 @@ APP_PASSWORD = os.environ.get("EMAIL_PASS")
 
 @app.route("/send", methods=["POST"])
 def send_email():
-    data = request.json
+    data = request.form
 
     name = data.get("name")
     email = data.get("email")
@@ -48,4 +48,5 @@ Message:
 
 
 if __name__ == "__main__":
+
     app.run()
